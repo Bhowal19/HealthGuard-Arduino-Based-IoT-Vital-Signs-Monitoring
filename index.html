@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Heart Disease Prediction</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="s1.css">
+</head>
+<body>
+  <h1>
+    CSE3002 - Internet Of Things
+  </h1>
+  <h2>Heart Disease Prediction</h2>
+  <br>
+    
+  
+
+  <h2>Arduino Data Display</h2>
+  <br>
+  <br>
+  <table>
+    <thead>
+      <tr>
+        <th style="background-color: #ADD8E6;" >Timestamp</th>
+        <th>Data</th>
+      </tr>
+    </thead>
+    <tbody id="data-table">
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <br>
+  <script src="script.js"></script>
+
+  <h2>Symptoms & Factors</h2>
+  <form method="post" action="predict.php">
+    <div style="display: flex;">
+      <label for="age" style="margin-right: 10px;">Age:</label>
+      <input type="number" name="age" id="age">
+      <br>
+      
+      
+    </div>
+    <br>
+    <form method="post" action="predict.php">
+      <div style="display: flex;">
+        <label for="sex">Sex:</label>
+    <select name="sex" id="sex">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>    
+      </div>
+    <br>
+
+    <style>
+      input[type="number"] {
+        border-radius: 5px;
+        border: 1px solid #00ff15;
+        padding: 5px;
+        margin-left: 10px;
+      }
+    </style>
+    
+    <div style="display: flex;">
+      <label for="blood-pressure">Blood Pressure:</label>
+      <input type="number" name="blood-pressure" id="blood-pressure">
+    </div>
+    <br>
+    <div style="display: flex;">
+      <label for="cholesterol-levels">Cholesterol Levels:</label>
+      <input type="number" name="cholesterol-levels" id="cholesterol-levels">
+    </div>
+    <br>
+    
+    <div style="display: flex;">
+      <label for="blood-sugar-levels">Blood Sugar Levels(mmol/L):</label>
+      <input type="number" name="blood-sugar-levels" id="blood-sugar-levels">
+    </div>  
+    <br>
+
+    <div style="display: flex;">
+      <label for="family-history">Family History:</label>
+    <select name="family-history" id="family-history">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+    </div> 
+
+    <div style="display: flex;">
+      <label for="smoking">Smoking:</label>
+    <select name="smoking" id="smoking">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+    </div> 
+    <div style="display: flex;">
+      <label for="bmi">Body Mass Index (BMI- kg/m2):</label>
+    <input type="number" name="bmi" id="bmi">
+    </div> 
+   
+    <label for="exercise">Exercise:</label>
+    <select name="exercise" id="exercise">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+    <br>
+
+    <form>
+      <label for="anemia">Anemia:</label>
+      <input type="text" id="anemia" name="anemia" value="0"><br>
+
+      <label for="creatinine_phosphokinase">Creatinine Phosphokinase:</label>
+      <input type="text" id="creatinine_phosphokinase" name="creatinine_phosphokinase" value="0"><br>
+
+      <label for="diabetes">Diabetes:</label>
+      <input type="text" id="diabetes" name="diabetes" value="0"><br>
+
+      <label for="ejection_fraction">Ejection Fraction:</label>
+      <input type="text" id="ejection_fraction" name="ejection_fraction" value="0"><br>
+
+      <label for="high_blood_pressure">High Blood Pressure:</label>
+      <input type="text" id="high_blood_pressure" name="high_blood_pressure" value="0"><br>
+
+      <label for="platelets">Platelets:</label>
+      <input type="text" id="platelets" name="platelets" value="0"><br>
+
+      <label for="serum_creatinine">Serum Creatinine:</label>
+      <input type="text" id="serum_creatinine" name="serum_creatinine" value="0"><br>
+
+      <label for="serum_sodium">Serum Sodium:</label>
+      <input type="text" id="serum_sodium" name="serum_sodium" value="0"><br>
+
+      <input type="submit" value="Predict">
+    </form>
+
+    <!-- <input type="submit" value="Predict"> -->
+  </form>
+   <br>
+  <!-- <img src="ann pic.png" alt=""> -->
+  <br>
+
+
+
+
+
+  <div class="container">
+    <h5>Advanced Neural Network Model for Cardiac Disease Prediction</h5>
+    <div class="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/3qXb8911OS4" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <br>
+    <!-- <form>
+      <label for="anemia">Anemia:</label>
+      <input type="text" id="anemia" name="anemia" value="0"><br>
+
+      <label for="creatinine_phosphokinase">Creatinine Phosphokinase:</label>
+      <input type="text" id="creatinine_phosphokinase" name="creatinine_phosphokinase" value="0"><br>
+
+      <label for="diabetes">Diabetes:</label>
+      <input type="text" id="diabetes" name="diabetes" value="0"><br>
+
+      <label for="ejection_fraction">Ejection Fraction:</label>
+      <input type="text" id="ejection_fraction" name="ejection_fraction" value="0"><br>
+
+      <label for="high_blood_pressure">High Blood Pressure:</label>
+      <input type="text" id="high_blood_pressure" name="high_blood_pressure" value="0"><br>
+
+      <label for="platelets">Platelets:</label>
+      <input type="text" id="platelets" name="platelets" value="0"><br>
+
+      <label for="serum_creatinine">Serum Creatinine:</label>
+      <input type="text" id="serum_creatinine" name="serum_creatinine" value="0"><br>
+
+      <label for="serum_sodium">Serum Sodium:</label>
+      <input type="text" id="serum_sodium" name="serum_sodium" value="0"><br>
+
+      <input type="submit" value="Submit">
+    </form> -->
+  </div>
+</body>
+</html>
+
