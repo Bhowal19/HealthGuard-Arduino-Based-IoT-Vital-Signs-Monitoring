@@ -1,6 +1,6 @@
 <!-- # Cardiac-Disease-Prediction-Using-Arduino
 Deployed an ANN model for Cardiac Disease Prediction Using Arduino sensors -->
-# Cardiac Disease Prediction Using Arduino
+# HealthGuard: Arduino-Based IoT Vital Signs Monitoring
 
 This GitHub repository provides information, diagrams, Program Codes for the ML model used , and Arduino code to help users identify the whether they have a Cardiac Disease or not by entering some basic health or medical records like Heart-Rate and Pulse or ECG-reading , all of which will be determined through the use of Body Vital Sensors connected to the Arduino. With the information and tools provided in this repository, users can now predict their own Cardiac related health issues and be far more sure for which doctor to consult in future.
 
